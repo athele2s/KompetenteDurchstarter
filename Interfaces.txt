@@ -1,0 +1,40 @@
+public interface Interface_Parkhausbetreiber {
+	
+	//1.	Als „Parkhausbetreiber“ benötige ich eine Kundenstatistik um eine kosten/nutzen Analyse erstellen zu können.
+
+	int Kunden_heute=0;
+	int Einnahmen_heute=0;
+
+//Implementieren der Ausgabe als Schleife (1.Tag 2.Tag .. Tage Ges.)
+	 String get_Statistik_ges(int Tage); // Besucher + Einnahmen
+	 int get_Besucher(int Tage); // Tage groesser als 0 
+	 int get_Einnahmen(int Tage); // Tage groesser als 0 
+		
+}
+
+
+
+
+
+public interface Interface_Kunde {
+	//7. Als „Kunde“ möchte ich das ich schon beim Einfahren informiert werde wie hoch die Parkgebühren pro Stunde sind.
+
+	int Aktl_Parkgebühr_proSt=0;
+
+	 int get_Aktl_Parkgebühr_proSt(); // Preis >= 0
+		
+}
+
+
+
+
+
+public interface Interface_Sicherheitsbeauftragter {
+//5.	Als „Sicherheitsbeauftragter“ benötige ich die Fähigkeit Kunden auch manuell die Ausfahrt ins Parkhaus zu gewähren um die Sicherheit im Falle eines Stromausfalls zu gewährleisten
+	
+	Boolean Schranke = false; // Schranke offen oder zu ? true = offen
+	Boolean Sicherheitsvorfall = false; //Manuelles öffnen darf erst erfolgen wenn ein Sicherheitsfall vorliegt
+	
+	 void Schranke_oeffnen();
+	 void Schranke_schließen();
+}
